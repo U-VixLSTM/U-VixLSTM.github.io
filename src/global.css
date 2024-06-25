@@ -1,0 +1,14 @@
+/* The integration's default injected base.css file */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .link {
+    @apply text-[#2B6CB0] hover:underline cursor-pointer;
+  }
+
+  .section-title {
+    @apply text-3xl font-medium text-black my-4 py-2.5 w-[1100px] mx-auto text-center border-b border-black/15 ;
+  }
+}

@@ -1,0 +1,101 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import "../global.css";
+
+const citation = `
+@article{dutta2024segmentation,
+  title={Are Vision xLSTM Embedded UNet More Reliable in Medical 3D Image Segmentation?},
+  author={Dutta, Pallabi and Bose, Soham and Roy, Swalpa Kumar and Mitra, Sushmita},
+  journal={arXiv},
+  pages={1--9},
+  year={2024}
+}`;
+---
+
+<Layout title="Welcome to Chennal.">
+  <main class="p-3">
+    <Hero />
+    <section class="lg:max-w-[1100px] mx-auto text-justify">
+      <h2 class="section-title">Abstract</h2>
+      The advancement of developing efficient medical image segmentation has evolved
+      from initial dependence on Convolutional Neural Networks (CNNs) to the present
+      investigation of hybrid models that combine CNNs with Vision Transformers.
+      Furthermore, there is an increasing focus on creating architectures that are
+      both high-performing in medical image segmentation tasks and computationally
+      efficient to be deployed on systems with limited resources. Although transformers
+      have several advantages like capturing global dependencies in the input data,
+      they face challenges such as high computational and memory complexity. This
+      paper investigates the integration of CNNs and Vision Extended Long Short-Term
+      Memory (Vision-xLSTM) models by introducing a novel approach called UVixLSTM.
+      The Vision-xLSTM blocks captures temporal and global relationships within the
+      patches extracted from the CNN feature maps. The convolutional feature reconstruction
+      path upsamples the output volume from the Vision-xLSTM blocks to produce the
+      segmentation output. Our primary objective is to propose that Vision-xLSTM
+      forms a reliable backbone for medical image segmentation tasks, offering excellent
+      segmentation performance and reduced computational complexity. UVixLSTM exhibits
+      superior performance compared to state-of-the-art networks on the publicly-available
+      Synapse dataset. Code is available at: https://github.com/duttapallabi2907/UVixLSTM
+    </section>
+    <section class="">
+      <h2 class="section-title">Highlights</h2>
+      <ul class="list-disc max-w-[1100px] mx-auto lg:px-9 space-y-1">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="section-title">Netwwork</h2>
+      <img
+        src="/public/uvixlstm.jpg"
+        alt="Nwtwork Image"
+        class="lg:w-[1100px] mx-auto"
+      />
+      <p class="text-justify lg:w-[1100px] mx-auto my-4">
+        Architectural framework of UVixLSTM depicting the input processed by
+        stacked layers of CNNs and Vision- xLSTM blocks. The intermediate
+        feature representation from the feature extraction path is upsampled
+        through the feature reconstruction path to obtain the final segmentation
+        output.
+      </p>
+    </section>
+    <section>
+      <h2 class="section-title">Segmentation</h2>
+      <h3 class="text-2xl my-1 text-blue-500 mx-auto text-center">
+        Tentative Results
+      </h3>
+      <img
+        src="/public/performance-comparision.jpg"
+        alt="Performance comparision"
+        class="lg:w-[1100px] mx-auto"
+      />
+      <div class="lg:w-[955px] mx-auto mb-7 bg-black/15 h-[1px]"></div>
+      <img
+        src="/public/figure-3.png"
+        alt="Performance comparision"
+        class="lg:w-[950px] mx-auto"
+      />
+      <div class="lg:w-[955px] mx-auto mt-7 mb-2 bg-black/15 h-[1px]"></div>
+      <img
+        src="/public/comparision-table.jpg"
+        alt="Performance comparision"
+        class="lg:w-[1030px] mx-auto"
+      />
+      <div class="lg:w-[955px] mx-auto mt-4 bg-black/15 h-[1px]"></div>
+      <img
+        src="/public/comparision-graph.jpg"
+        alt="Performance comparision"
+        class="lg:w-[980px] mx-auto"
+      />
+    </section>
+    <section>
+      <h2 class="section-title">Citation</h2>
+      <pre class="mx-auto w-fit bg-[#E9EEEF] h-fit px-7 rounded-sm">
+    		<code>
+					{citation}
+    		</code>
+  		</pre>
+    </section>
+  </main>
+</Layout>
