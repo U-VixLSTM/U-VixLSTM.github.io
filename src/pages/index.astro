@@ -14,45 +14,55 @@ const citation = `
 ---
 
 <Layout title="Welcome to Chennal.">
-  <main class="p-3">
+  <main class="p-3 md:p-4 lg:p-6">
     <Hero />
     <section class="lg:max-w-[1100px] mx-auto text-justify">
       <h2 class="section-title">Abstract</h2>
-      The advancement of developing efficient medical image segmentation has evolved
-      from initial dependence on Convolutional Neural Networks (CNNs) to the present
-      investigation of hybrid models that combine CNNs with Vision Transformers.
-      Furthermore, there is an increasing focus on creating architectures that are
-      both high-performing in medical image segmentation tasks and computationally
-      efficient to be deployed on systems with limited resources. Although transformers
-      have several advantages like capturing global dependencies in the input data,
-      they face challenges such as high computational and memory complexity. This
-      paper investigates the integration of CNNs and Vision Extended Long Short-Term
-      Memory (Vision-xLSTM) models by introducing a novel approach called UVixLSTM.
-      The Vision-xLSTM blocks captures temporal and global relationships within the
-      patches extracted from the CNN feature maps. The convolutional feature reconstruction
-      path upsamples the output volume from the Vision-xLSTM blocks to produce the
-      segmentation output. Our primary objective is to propose that Vision-xLSTM
-      forms a reliable backbone for medical image segmentation tasks, offering excellent
-      segmentation performance and reduced computational complexity. UVixLSTM exhibits
-      superior performance compared to state-of-the-art networks on the publicly-available
-      Synapse dataset. Code is available at: https://github.com/duttapallabi2907/UVixLSTM
+      <p class="px-1">
+        The advancement of developing efficient medical image segmentation has
+        evolved from initial dependence on Convolutional Neural Networks (CNNs)
+        to the present investigation of hybrid models that combine CNNs with
+        Vision Transformers. Furthermore, there is an increasing focus on
+        creating architectures that are both high-performing in medical image
+        segmentation tasks and computationally efficient to be deployed on
+        systems with limited resources. Although transformers have several
+        advantages like capturing global dependencies in the input data, they
+        face challenges such as high computational and memory complexity. This
+        paper investigates the integration of CNNs and Vision Extended Long
+        Short-Term Memory (Vision-xLSTM) [<a href="#reference-1" class="link"
+          >1</a
+        >, <a href="#reference-2" class="link">2</a>] models by introducing a
+        novel approach called UVixLSTM. The Vision-xLSTM blocks captures
+        temporal and global relationships within the patches extracted from the
+        CNN feature maps. The convolutional feature reconstruction path
+        upsamples the output volume from the Vision-xLSTM blocks to produce the
+        segmentation output. Our primary objective is to propose that
+        Vision-xLSTM forms a reliable backbone for medical image segmentation
+        tasks, offering excellent segmentation performance and reduced
+        computational complexity. UVixLSTM exhibits superior performance
+        compared to state-of-the-art networks on the publicly-available Synapse
+        dataset. Code is available at:
+        https://github.com/duttapallabi2907/UVixLSTM
+      </p>
     </section>
     <section class="">
       <h2 class="section-title">Highlights</h2>
-      <ul class="list-disc max-w-[1100px] mx-auto lg:px-9 space-y-1">
+      <ul class="list-disc max-w-[1100px] mx-auto px-7 lg:px-9 space-y-1">
         <li></li>
         <li></li>
         <li></li>
       </ul>
     </section>
     <section>
-      <h2 class="section-title">Netwwork</h2>
+      <h2 class="section-title">Network</h2>
       <img
-        src="/public/uvixlstm.jpg"
+        src="/uvixlstm.jpg"
         alt="Nwtwork Image"
         class="lg:w-[1100px] mx-auto"
       />
-      <p class="text-justify lg:w-[1100px] mx-auto my-4">
+      <p
+        class="text-justify w-full text-sm md:text-base lg:w-[1000px] mx-auto my-4"
+      >
         Architectural framework of UVixLSTM depicting the input processed by
         stacked layers of CNNs and Vision- xLSTM blocks. The intermediate
         feature representation from the feature extraction path is upsampled
@@ -61,41 +71,79 @@ const citation = `
       </p>
     </section>
     <section>
-      <h2 class="section-title">Segmentation</h2>
-      <h3 class="text-2xl my-1 text-blue-500 mx-auto text-center">
-        Tentative Results
-      </h3>
+      <h2 class="section-title">Segmentation Results</h2>
+      <h3 class="section-sub-title">Datasets</h3>
+      <p
+        class="text-justify text-sm md:text-base px-1 w-full md:w-[950px] mx-auto my-2"
+      >
+        The Synapse dataset [<a href="#reference-3" class="link">3</a>]
+        comprises 30 CT volumes with sizes varying from 512 × 512 × 85 to 512 ×
+        512 × 198. The CT volumes are annotated manually by domain experts to
+        highlight the different abdominal organs. The model is trained to
+        segment nine distinct organs of the abdominal cavity viz. spleen, left
+        kidney, right kidney, liver, gall bladder, pancreas, stomach, right
+        adrenal gland, and left adrenal gland. The spleen, liver, and stomach
+        are classified as larger organs, whereas the kidneys, gall bladder,
+        pancreas, and adrenal glands are smaller in size.
+      </p>
+      <div class="lg:w-[955px] mx-auto my-3 bg-black/15 h-[1px]"></div>
+      <h3 class="section-sub-title">Qualitative Results</h3>
       <img
-        src="/public/performance-comparision.jpg"
+        src="/performance-comparision.jpg"
         alt="Performance comparision"
         class="lg:w-[1100px] mx-auto"
       />
-      <div class="lg:w-[955px] mx-auto mb-7 bg-black/15 h-[1px]"></div>
+      <div class="lg:w-[955px] mx-auto my-1 bg-black/15 h-[1px]"></div>
+      <h3 class="section-sub-title mb-2 md:mb-2">Quantitative Results</h3>
       <img
-        src="/public/figure-3.png"
-        alt="Performance comparision"
-        class="lg:w-[950px] mx-auto"
-      />
-      <div class="lg:w-[955px] mx-auto mt-7 mb-2 bg-black/15 h-[1px]"></div>
-      <img
-        src="/public/comparision-table.jpg"
+        src="/comparision-table.jpg"
         alt="Performance comparision"
         class="lg:w-[1030px] mx-auto"
       />
-      <div class="lg:w-[955px] mx-auto mt-4 bg-black/15 h-[1px]"></div>
+      <div class="lg:w-[955px] mx-auto mt-7 mb-2 bg-black/15 h-[1px]"></div>
+      <h3 class="section-sub-title mb-2 md:mb-4">Regression Plots</h3>
       <img
-        src="/public/comparision-graph.jpg"
+        src="/figure-3.png"
+        alt="Performance comparision"
+        class="lg:w-[950px] mx-auto"
+      />
+      <div class="lg:w-[955px] mx-auto mt-4 bg-black/15 h-[1px]"></div>
+      <h3 class="section-sub-title">Computational Complexity vs Flops</h3>
+      <img
+        src="/comparision-graph.jpg"
         alt="Performance comparision"
         class="lg:w-[980px] mx-auto"
       />
     </section>
-    <section>
+    <section id="citation">
       <h2 class="section-title">Citation</h2>
-      <pre class="mx-auto w-fit bg-[#E9EEEF] h-fit px-7 rounded-sm">
+      <pre
+        class="mx-auto bg-[#E9EEEF] w-full max-w-[1100px] text-sm md:text-base h-fit px-7 rounded-sm overflow-auto">
     		<code>
 					{citation}
     		</code>
   		</pre>
+    </section>
+    <section>
+      <h2 class="section-title">References</h2>
+      <ol
+        class="list-decimal max-w-[1100px] px-5 md:px-7 text-sm md:text-base mx-auto lg:px-9 space-y-1"
+      >
+        <li id="reference-1">
+          B. Alkin, M. Beck, and et al., “Vision-LSTM: xLSTM as generic vision
+          backbone,” arXiv preprint arXiv:2406.04303, 2024.
+        </li>
+        <li id="reference-2">
+          M. Beck, K. Pöppel, and et al., “xLSTM: Extended Long Short-Term
+          Memory,” arXiv preprint arXiv:2405.04517, 2024.
+        </li>
+        <li id="reference-3">
+          B. Landman, Z. Xu, and et al., “MICCAI multi-atlas labeling beyond the
+          cranial vault–workshop and challenge,” in Proceedings of MICCAI
+          Multi-Atlas Labeling beyond Cranial Vault—Workshop Challenge, p. 12,
+          2015.
+        </li>
+      </ol>
     </section>
   </main>
 </Layout>
